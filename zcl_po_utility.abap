@@ -10,8 +10,8 @@
 *+{static}REQUEST_OUTBOUND_ACK( )
 *+{static}RESTART( )
 *}
-*ZRRE_CL_PO_UTILITY --> ZRRE_IF_XML_ASSERTION
-*interface ZRRE_IF_XML_ASSERTION {
+*ZCL_PO_UTILITY --> ZIF_XML_ASSERTION
+*interface ZIF_XML_ASSERTION {
 *+ASSERT_BY_CONTAIN_TEXT( )
 *+ASSERT_BY_TAG_COUNT( )
 *+ASSERT_BY_TAG_VALUE( )
@@ -20,19 +20,19 @@
 *}
 *hide <<FUGR>> circle
 *@enduml
-CLASS zrre_cl_po_utility DEFINITION
+CLASS zcl_po_utility DEFINITION
   PUBLIC
   FINAL
   CREATE PUBLIC .
   PUBLIC SECTION.
 
-    INTERFACES: zrre_if_xml_assertion.
+    INTERFACES: zif_xml_assertion.
     ALIASES:
-      assert_by_contain_text FOR zrre_if_xml_assertion~assert_by_contain_text,
-      assert_by_tag_value FOR zrre_if_xml_assertion~assert_by_tag_value,
-      assert_by_tag_count FOR zrre_if_xml_assertion~assert_by_tag_count,
-      assert_by_xpath_value FOR zrre_if_xml_assertion~assert_by_xpath_value,
-      assert_by_xpath_count FOR zrre_if_xml_assertion~assert_by_xpath_count.
+      assert_by_contain_text FOR zif_xml_assertion~assert_by_contain_text,
+      assert_by_tag_value FOR zif_xml_assertion~assert_by_tag_value,
+      assert_by_tag_count FOR zif_xml_assertion~assert_by_tag_count,
+      assert_by_xpath_value FOR zif_xml_assertion~assert_by_xpath_value,
+      assert_by_xpath_count FOR zif_xml_assertion~assert_by_xpath_count.
 
     TYPES:
          BEGIN OF ty_s_ori_msg_header.
