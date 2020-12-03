@@ -1,5 +1,5 @@
 "! <p class="shorttext synchronized" lang="en">XML Assertion</p>
-INTERFACE zrre_if_xml_assertion
+INTERFACE zif_xml_assertion
   PUBLIC .
   METHODS:
     "! <p class="shorttext synchronized" lang="en">assertion by contained text</p>
