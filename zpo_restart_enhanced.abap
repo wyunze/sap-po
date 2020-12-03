@@ -41,7 +41,7 @@ REPORT zrre_po_restart_ehanced.
 CLASS lcl_si_restart DEFINITION CREATE PUBLIC FINAL.
 
   PUBLIC SECTION.
-*    INTERFACES: zrre_if_xml_assertion.
+*    INTERFACES: zif_xml_assertion.
 
     TYPES:
       BEGIN OF ENUM tv_assert_type,
@@ -237,7 +237,7 @@ CLASS lcl_si_restart IMPLEMENTATION.
       } { ls_msgid-low }|."just for information
       ENDIF.
 
-      zrre_cl_po_utility=>get_payload(
+      zcl_po_utility=>get_payload(
        EXPORTING
         iv_msgid = <fs_ls_log>-msg_id
        IMPORTING
@@ -352,7 +352,7 @@ CLASS lcl_si_restart IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD assertion.
-    DATA(lo_po_utility) = NEW zrre_cl_po_utility( ).
+    DATA(lo_po_utility) = NEW zcl_po_utility( ).
 
     CASE iv_assert_type.
       WHEN assert_by_contain_text.
@@ -471,7 +471,7 @@ CLASS lcl_si_restart IMPLEMENTATION.
       READ TABLE mt_log ASSIGNING FIELD-SYMBOL(<fs_ls_log>) INDEX ls_selected_row.
 
       "Restart
-      DATA(rs_output) = zrre_cl_po_utility=>restart(
+      DATA(rs_output) = zcl_po_utility=>restart(
          EXPORTING
            iv_msg_id                = <fs_ls_log>-msg_id
            is_input = VALUE #(
